@@ -5,19 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
+    <style>
+        table,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        
+        td {
+            padding: 20px 80px 20px 80px;
+        }
+    </style>
 </head>
 
 <body>
     <div>
         <h1>Вариант 1</h1>
+
         <table>
-            <th></th>
             <tr>
-                <td></td>
+                <td colspan="4" rowspan="2"></td>
+                <td colspan="2"></td>
+                <td rowspan="2"></td>
+                <td rowspan="2"></td>
             </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="2" rowspan="2"></td>
+                <td colspan="2" rowspan="2"></td>
+                <td colspan="2" rowspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
         </table>
     </div>
 </body>
