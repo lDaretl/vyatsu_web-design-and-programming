@@ -1,0 +1,36 @@
+.parent {
+    width: 600px;
+    /* ширина контейнера для наглядности */
+    border: 1px solid #ccc;
+    /* граница родителя */
+    padding: 10px;
+    /* отступ внутри родителя */
+    box-sizing: border-box;
+}
+
+.box {
+    width: 66%;
+    /* ширина блока = 66% родителя */
+    padding: 10px;
+    /* внутренний отступ */
+    box-sizing: border-box;
+    /* чтобы padding не влиял на width */
+    margin-bottom: 10px;
+    /* отступ между блоками */
+    color: #333;
+    border: 2px solid black;
+}
+
+.yellow {
+    background-color: #fff7a0;
+    margin-left: 0;
+    margin-right: calc(34% - 10px);
+    /* как на картинке */
+}
+
+.pink {
+    background-color: #f9d0f9;
+    margin-left: calc(34% - 10px);
+    /* сдвигаем влево */
+    margin-right: 0;
+}

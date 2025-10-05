@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.box {
+    border: 1px solid black;
+    max-width: 15%;
+    text-align: center;
+}
+
+.red {
+    background-color: #f8b0b0;
+    color: #b30000;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.yellow {
+    background-color: #f9e67a;
+    color: #8a6d00;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.green {
+    background-color: #a8f0a2;
+    color: #007a00;
+    padding: 2px 4px;
+    border-radius: 3px;
+}

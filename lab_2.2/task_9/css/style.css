@@ -1,0 +1,38 @@
+.container {
+    width: 420px;
+    margin: 20px;
+    font-size: 14px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.block {
+    background: #ddd;
+    padding: 10px;
+    padding-left: 160px;
+    margin-bottom: 20px;
+}
+
+.block::before,
+.block::after {
+    content: "";
+    display: table;
+}
+
+.block::after {
+    clear: both;
+}
+
+.img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    background: #fffa9d;
+    margin-right: 10px;
+    margin-left: -150px;
+}
+
+.text {
+    overflow: hidden;
+    margin-left: 20px;
+}
