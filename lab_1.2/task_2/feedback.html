@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin: 0; height: 100%; min-height: 100%;">
+    <div style="display: flex; justify-content: center; align-items: center; min-height: 100%;">
+        <div style="width: fit-content; height: fit-content; padding: 20px; border-style: solid; border-radius: 10px; border-width: 2px;">
+            <form>
+                <h2 style="margin-top: -5px; text-align: center;">Связаться со мной</h2>
+                <label for="name">Имя</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <br>
+                <label for="email">E-mail</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <br>
+                <label for="msg_theme">Тема сообщения</label><br>
+                <input type="radio" id="msg_theme-1" name="msg_theme">Предложение о работе<br>
+                <input type="radio" id="msg_theme-2" name="msg_theme">Вопрос по сайту<br>
+                <input type="radio" id="msg_theme-3" name="msg_theme">Просто похвалить<br>
+                <br>
+                <label for="from">Как вы меня нашли?</label>
+                <select name="from" id="from" form="from">
+            <option value="friends">Порекомендовали друзья</option>
+            <option value="google">Нашел в Google</option>
+            <option value="random">Случайно зашел</option>
+        </select><br>
+                <br>
+                <label for="msg">Сообщение</label><br>
+                <textarea name="msg" id="msg" placeholder="Введите ваше сообщение здесь..." style="width: 400px; height: 100px;"></textarea><br>
+                <br>
+                <input type="checkbox" name="pers_data" id="pers_data" value="agreed" required>
+                <label for="pers_data">Я согласен на обработку персональных данных</label><br>
+                <br>
+                <button type="submit">Отправить сообщение</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
