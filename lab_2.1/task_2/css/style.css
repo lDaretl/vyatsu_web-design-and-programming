@@ -1,0 +1,44 @@
+:root {
+  --turquoise: #1abc9c;
+  --blue: #474e5d;
+  --footer: #333;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+.who {
+  background-color: var(--turquoise);
+  padding: 80px 0;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid white;
+  margin: 20px 0;
+}
+
+.about {
+  background-color: var(--blue);
+}
+
+.places img {
+  border-radius: 10px;
+}
+
+footer {
+  background-color: var(--footer);
+  color: white;
+}
+
+footer a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}

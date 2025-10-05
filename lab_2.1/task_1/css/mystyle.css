@@ -1,0 +1,62 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto;
+}
+
+p {
+    color: green;
+}
+
+p.colortext {
+    color: red;
+    margin: 20px;
+}
+
+#main {
+    color: blue;
+    padding-left: 25px;
+}
+
+div {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #999;
+    margin: 10px auto;
+}
+
+div div {
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+    margin: 10px auto;
+}
+
+div[student="yes"] {
+    background-image: url('../assets/bird.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:active {
+    color: red;
+}
