@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Отсчет до Нового года</title>
+    <script>
+        function countdown() {
+            const eventDate = new Date(document.getElementById("targetDate").value);
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("output").value = "Событие наступило!";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("output").value =
+                `${days} дн. ${hours} ч. ${minutes} мин. ${seconds} сек.`;
+            setTimeout(countdown, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Лабораторная работа №9.3</h2>
+    <p>Введите дату события:</p>
+    <input type="datetime-local" id="targetDate">
+    <button onclick="countdown()">Запустить отсчет</button>
+    <br><br>
+    <input type="text" id="output" size="40" readonly>
+</body>
+
+</html>

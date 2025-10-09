@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Два объекта за курсором</title>
+    <style>
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        #ball1 {
+            background: blue;
+        }
+        
+        #ball2 {
+            background: green;
+        }
+    </style>
+    <script>
+        let x1 = 50,
+            y1 = 50,
+            x2 = 200,
+            y2 = 200,
+            tx = 0,
+            ty = 0;
+
+        document.onmousemove = function(e) {
+            tx = e.pageX;
+            ty = e.pageY;
+        };
+
+        function move() {
+            x1 += (tx - x1) * 0.05;
+            y1 += (ty - y1) * 0.05;
+            x2 += (tx - x2) * 0.03;
+            y2 += (ty - y2) * 0.03;
+
+            document.getElementById("ball1").style.left = x1 + "px";
+            document.getElementById("ball1").style.top = y1 + "px";
+            document.getElementById("ball2").style.left = x2 + "px";
+            document.getElementById("ball2").style.top = y2 + "px";
+
+            requestAnimationFrame(move);
+        }
+
+        window.onload = move;
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <h2>Лабораторная работа №12.3</h2>
+    <div id="ball1" class="ball"></div>
+    <div id="ball2" class="ball"></div>
+</body>
+
+</html>

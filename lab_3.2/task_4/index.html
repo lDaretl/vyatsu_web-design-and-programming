@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Свойства мыши</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .form {
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+    <script>
+        function showCoords(e) {
+            document.getElementById("screen").value = e.screenX + ", " + e.screenY;
+            document.getElementById("client").value = e.clientX + ", " + e.clientY;
+            document.getElementById("offset").value = e.offsetX + ", " + e.offsetY;
+        }
+    </script>
+</head>
+
+<body onmousemove="showCoords(event)">
+    <div class="form">
+        <h2>Лабораторная работа №12.1</h2>
+        <p>Двигайте мышью по странице:</p>
+        <form>
+            <label>screenX, screenY: <input type="text" id="screen" readonly></label><br>
+            <label>clientX, clientY: <input type="text" id="client" readonly></label><br>
+            <label>offsetX, offsetY: <input type="text" id="offset" readonly></label><br>
+        </form>
+    </div>
+
+</body>
+
+</html>

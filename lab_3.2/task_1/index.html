@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Время на странице</title>
+    <script>
+        let startTime;
+
+        function person_in() {
+            startTime = new Date();
+        }
+
+        function showTimeSpent() {
+            const endTime = new Date();
+            const timeDiff = Math.round((endTime.getTime() - startTime.getTime()) / 1000);
+            document.getElementById("output").textContent =
+                "Вы на странице уже " + timeDiff + " секунд.";
+        }
+    </script>
+</head>
+
+<body onload="person_in()">
+    <h2>Лабораторная работа № 9.1</h2>
+    <p>Нажмите кнопку, чтобы узнать, сколько секунд вы уже на странице:</p>
+    <button onclick="showTimeSpent()">Показать время</button>
+    <p id="output" style="font-weight:bold; color:blue;"></p>
+</body>
+
+</html>
