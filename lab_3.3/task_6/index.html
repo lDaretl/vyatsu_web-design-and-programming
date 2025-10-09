@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 16.2 — jQuery плагины</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            margin: 40px;
+        }
+        
+        #accordion {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Примеры jQuery UI</h2>
+
+    <div id="accordion">
+        <h3>HTML</h3>
+        <div>
+            <p>Основы верстки и тегов.</p>
+        </div>
+        <h3>JavaScript</h3>
+        <div>
+            <p>Сценарное программирование.</p>
+        </div>
+        <h3>jQuery</h3>
+        <div>
+            <p>Работа с элементами и анимацией.</p>
+        </div>
+    </div>
+
+    <p>Выберите дату: <input type="text" id="datepicker"></p>
+
+    <script>
+        $(function() {
+            $("#accordion").accordion();
+            $("#datepicker").datepicker();
+        });
+    </script>
+
+</body>
+
+</html>

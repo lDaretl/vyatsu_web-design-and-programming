@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 6.1 — Работа с формами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        fieldset {
+            background: #fff;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+            width: 380px;
+        }
+        
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        .form-group {
+            margin-top: 10px;
+        }
+        
+        button {
+            display: block;
+            margin: 20px auto 0;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        @media (max-width: 480px) {
+            fieldset {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Регистрационная форма</legend>
+        <form id="regForm">
+
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <div class="form-group">
+                <label>Пол:</label>
+                <label><input type="radio" name="gender" value="Мужской"> Мужской</label>
+                <label><input type="radio" name="gender" value="Женский"> Женский</label>
+            </div>
+
+            <div class="form-group">
+                <label>Хобби:</label>
+                <label><input type="checkbox" name="hobby" value="Музыка"> Музыка</label>
+                <label><input type="checkbox" name="hobby" value="Спорт"> Спорт</label>
+                <label><input type="checkbox" name="hobby" value="Программирование"> Программирование</label>
+            </div>
+
+            <label>Комментарий:</label>
+            <textarea name="comment" rows="3" placeholder="Ваш комментарий..."></textarea>
+
+            <button type="button" onclick="showForm()">Отправить</button>
+        </form>
+    </fieldset>
+
+    <script>
+        function showForm() {
+            const f = document.forms['regForm'];
+
+            if (!f.name.value || !f.email.value) {
+                alert('Пожалуйста, заполните обязательные поля!');
+                return;
+            }
+
+            let gender = '';
+            for (let g of f.gender) {
+                if (g.checked) {
+                    gender = g.value;
+                    break;
+                }
+            }
+
+            let hobbies = [];
+            for (let h of f.hobby) {
+                if (h.checked) hobbies.push(h.value);
+            }
+            if (hobbies.length === 0) hobbies.push('не указаны');
+
+            alert(
+                `Имя: ${f.name.value}\n` +
+                `Email: ${f.email.value}\n` +
+                `Пол: ${gender || 'не выбран'}\n` +
+                `Хобби: ${hobbies.join(', ')}\n` +
+                `Комментарий: ${f.comment.value || '—'}`
+            );
+        }
+    </script>
+
+</body>
+
+</html>

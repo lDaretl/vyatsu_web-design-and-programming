@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 7.2 — Расширенный калькулятор</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f7f8;
+            margin-top: 40px;
+        }
+        
+        .calc {
+            background: #fff;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #bbb;
+            width: 300px;
+        }
+        
+        input {
+            width: 90%;
+            padding: 6px;
+            margin: 6px 0;
+            text-align: center;
+        }
+        
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calc">
+        <h3>Расширенный калькулятор</h3>
+        <input type="text" id="num" placeholder="Введите число"><br>
+        <input type="text" id="res" placeholder="Результат" readonly><br>
+        <button onclick="f('pow')">x²</button>
+        <button onclick="f('sqrt')">√x</button>
+        <button onclick="f('round')">Округлить</button>
+        <button onclick="f('abs')">|x|</button>
+    </div>
+
+    <script>
+        function f(type) {
+            let n = parseFloat(document.getElementById('num').value);
+            if (isNaN(n)) {
+                alert('Введите число');
+                return;
+            }
+            let r;
+            switch (type) {
+                case 'pow':
+                    r = Math.pow(n, 2);
+                    break;
+                case 'sqrt':
+                    r = Math.sqrt(n);
+                    break;
+                case 'round':
+                    r = Math.round(n);
+                    break;
+                case 'abs':
+                    r = Math.abs(n);
+                    break;
+            }
+            document.getElementById('res').value = r;
+        }
+    </script>
+
+</body>
+
+</html>

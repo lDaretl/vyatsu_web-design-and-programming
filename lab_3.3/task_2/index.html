@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 6.2 — Психологический тест</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f9f9f9;
+            margin: 40px;
+        }
+        
+        fieldset {
+            width: 450px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            padding: 20px;
+        }
+        
+        input,
+        select {
+            margin: 6px;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend><b>Психологический тест</b></legend>
+        <form id="testForm">
+            1. Как вы реагируете на стресс?<br>
+            <select name="q1" required>
+    <option value="">-- выберите --</option>
+    <option value="1">Спокойно</option>
+    <option value="2">Слегка нервничаю</option>
+    <option value="3">Очень переживаю</option>
+  </select><br> 2. Что помогает вам расслабиться?<br>
+            <select name="q2" required>
+    <option value="">-- выберите --</option>
+    <option value="1">Музыка</option>
+    <option value="2">Прогулка</option>
+    <option value="3">Общение</option>
+  </select><br> 3. Как часто вы раздражаетесь?<br>
+            <select name="q3" required>
+    <option value="">-- выберите --</option>
+    <option value="1">Редко</option>
+    <option value="2">Иногда</option>
+    <option value="3">Часто</option>
+  </select><br>
+
+            <button type="button" onclick="checkTest()">Готово</button>
+        </form>
+    </fieldset>
+
+    <script>
+        function checkTest() {
+            const f = document.forms['testForm'];
+            if (!f.q1.value || !f.q2.value || !f.q3.value) {
+                alert('Ответьте на все вопросы!');
+                return;
+            }
+            let score = Number(f.q1.value) + Number(f.q2.value) + Number(f.q3.value);
+            let result = '';
+            if (score <= 4) result = 'Вы спокойны и уравновешенны.';
+            else if (score <= 6) result = 'Вы эмоциональны, но контролируете себя.';
+            else result = 'Вы подвержены стрессу, постарайтесь отдыхать больше!';
+            alert(result);
+        }
+    </script>
+
+</body>
+
+</html>

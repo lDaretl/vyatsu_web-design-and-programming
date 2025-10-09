@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 16.1 — jQuery слайдер</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f8f8f8;
+            margin: 40px;
+        }
+        
+        #panel {
+            background: #1ca8f6;
+            height: 200px;
+            display: none;
+            padding: 20px;
+            color: white;
+        }
+        
+        .button {
+            background: #007bff;
+            color: white;
+            width: 160px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Слайдер (slideToggle)</h2>
+
+    <div id="panel">Содержимое панели</div>
+    <div class="button">Показать / скрыть</div>
+
+    <script>
+        $(function() {
+            $(".button").click(function() {
+                $("#panel").slideToggle("normal");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

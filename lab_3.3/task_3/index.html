@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 7.1 — Калькулятор</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f3;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .calc {
+            display: inline-block;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #aaa;
+            width: 260px;
+        }
+        
+        input {
+            width: 90%;
+            margin: 6px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        
+        button {
+            width: 50px;
+            height: 40px;
+            margin: 4px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calc">
+        <h2>Калькулятор</h2>
+        <input type="text" id="a" placeholder="Первое число"><br>
+        <input type="text" id="b" placeholder="Второе число"><br>
+        <input type="text" id="result" placeholder="Результат" readonly><br>
+
+        <div>
+            <button onclick="calc('+')">+</button>
+            <button onclick="calc('-')">−</button>
+            <button onclick="calc('*')">×</button>
+            <button onclick="calc('/')">÷</button>
+            <button onclick="calc('√')">√</button>
+        </div>
+    </div>
+
+    <script>
+        function calc(op) {
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+            let r;
+
+            if (isNaN(a) || (isNaN(b) && op !== '√')) {
+                alert('Введите корректные числа!');
+                return;
+            }
+
+            switch (op) {
+                case '+':
+                    r = a + b;
+                    break;
+                case '-':
+                    r = a - b;
+                    break;
+                case '*':
+                    r = a * b;
+                    break;
+                case '/':
+                    r = b !== 0 ? a / b : '∞';
+                    break;
+                case '√':
+                    r = Math.sqrt(a);
+                    break;
+            }
+
+            document.getElementById('result').value = Math.round(r * 1000) / 1000;
+        }
+    </script>
+
+</body>
+
+</html>
