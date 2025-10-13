@@ -1,11 +1,15 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <header class="nav">
+      <strong>ИС «Магазин электроники»</strong>
+      <div>
+        <router-link to="/products">Товары</router-link>
+        <router-link to="/clients">Клиенты</router-link>
+        <router-link to="/orders">Заказы</router-link>
+      </div>
+    </header>
+    <main class="container">
+      <router-view />
+    </main>
+  </div>
 </template>
-
-<style scoped></style>

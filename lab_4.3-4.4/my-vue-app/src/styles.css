@@ -1,0 +1,12 @@
+body{margin:0;background:#f8fafc;font-family:Inter,system-ui,sans-serif}
+.container{max-width:1120px;margin:0 auto;padding:16px}
+.nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;z-index:10}
+.nav a{text-decoration:none;color:#334155;padding:8px 12px;border-radius:8px}
+.nav a.router-link-active{background:#e0e7ff;color:#1e3a8a}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;border-top:1px solid #e5e7eb;text-align:left}
+.table thead th{background:#f1f5f9}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.badge{background:#e0e7ff;color:#1e3a8a;border-radius:999px;padding:2px 10px;font-weight:600}
+.modal-footer-fixed{position:sticky;bottom:0;background:#fff;border-top:1px solid #e5e7eb;padding:10px;display:flex;justify-content:flex-end;gap:10px;margin-top:15px}
+.text-muted{color:#6b7280}
